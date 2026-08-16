@@ -1,5 +1,32 @@
-# ttemp
-> Repository currently contains a single README-like instruction file describing an intended C# external overlay for Counter-Strike 1.6; no source, build artifacts, or configuration files are present.
+<p align="center">
+  <img src="./.github/readme-assets/signal.gif" alt="Animated signal / product visual for ttemp" width="100%" />
+</p>
+
+<h1 align="center">ttemp</h1>
+
+<p align="center"><strong>Repository currently contains a single README-like instruction file describing an intended C# external overlay for Counter-Strike 1.6; no source, build artifacts, or configuration files are present.</strong></p>
+
+<p align="center"><code>REPO//SIGNAL</code> · <code>SIGNAL / PRODUCT</code> · <code>LOOPING README EXPERIENCE</code></p>
+
+## Live signal
+
+| Lens | Readout |
+| --- | --- |
+| Portfolio lane | **SIGNAL / PRODUCT** |
+| Code surface | **1** tracked files observed |
+| Primary materials | **Markdown** |
+| Verification | **0** test-related files observed |
+
+> A moving scan of the project surface. The animated frame above is a lightweight visual signature; the sections below remain the source of truth for implementation details.
+
+## Motion map
+
+`SIGNAL` → `SHAPE` → `RELEASE`
+
+Use the animated banner as the first signal, then move into the implementation dossier. The recommended next step is to verify the documented setup command against the repository scripts before extending the project.
+
+<details open>
+<summary><strong>Open the full project dossier</strong></summary>
 
 ## Overview
 This repository does not contain implementation code. The only supplied file is a readme-style excerpt that describes requirements for a C# external overlay (memory access, world-to-screen projection, ESP, aim-assist, ImGui menu) intended for educational, local/offline use with Counter-Strike 1.6. No source files, dependency manifests, CI configurations, or other artifacts were provided.
@@ -76,3 +103,9 @@ This repository currently has no implementation to modify. If you want to contri
 Please open issues and pull requests in the repository to propose changes. The repository currently lacks CONTRIBUTING.md; contributors should follow repository maintainers’ instructions if any are added.
 
 (Note: No LICENSE file was supplied in the provided dossier, so reuse terms are not specified here.)
+
+</details>
+
+---
+
+<p align="center"><sub>README motion system · visual layer by RepoSignal · implementation details remain project-specific</sub></p>
