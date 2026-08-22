@@ -1,0 +1,46 @@
+name: Join Meeting
+
+on:
+  workflow_dispatch:
+    inputs:
+      meeting_link: { required: true, type: string }
+      display_name: { required: true, type: string }
+      start_time: { required: true, type: string }
+      duration_minutes: { required: true, type: string }
+      job_id: { required: false, type: string }
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  attend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Wait until start time
+        run: node scripts/wait-until.js "${{ inputs.start_time }}"
+      - name: Join and attend meeting
+        env:
+          MEETING_LINK: ${{ inputs.meeting_link }}
+          DISPLAY_NAME: ${{ inputs.display_name }}
+          DURATION_MINUTES: ${{ inputs.duration_minutes }}
+          JOB_ID: ${{ inputs.job_id }}
+          GH_TOKEN: ${{ secrets.GH_CHAIN_TOKEN }}
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPO: ${{ github.event.repository.name }}
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+        run: node scripts/join-meeting.js
+      - name: Upload failure screenshot
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: failure-screenshot-${{ github.run_id }}
+          path: screenshot.png
+          if-no-files-found: ignore
